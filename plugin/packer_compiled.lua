@@ -81,6 +81,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nerdtree"
   },
+  ["nerdtree-git-plugin"] = {
+    loaded = true,
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin"
+  },
   ["nvim-bufferline.lua"] = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"

@@ -6,16 +6,18 @@
 --  ██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
 --  ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
 -------------------------------------------------------
--- TODO:
--- 1. Customize Galaxyline to your liking
--- 2. Try a port of molokai theme to lua
--- 3. Make use of NVIM 0.5 Features
--- 4. Telescope, Fugitive, Treesitter, Plug
--- 5. When opening new file, change working directory
--- 6. Nvim-Tree does not completely closes
--- 7. Barbar other buffer color change
--- C. Nope, barbar is sorting like shit, look intoit
--- 9. Bracket matching line, in code, in tree
+-- TODO: {PROBLEMOS}
+-- * unable to recompile c++ when java file is opened
+--      (Commented java compilation for now)
+-- * nerdtree doesn't refresh folder structure wrt file
+-- * vimcommentary c++ unable to set an autocmd in lua
+
+-- TODO: {FEATURE-RQSTS}
+-- * Try nvim 0.5 plugins
+--      (telescope, fugitive, treesitter)
+-- * Bracket matching line, in code, in tree
+-- * Customize Galaxyline to your liking
+-- * Try to port molokai theme in lua
 
 -- Plug Plugin Manager [plg] --------------------------
 require('plugins')

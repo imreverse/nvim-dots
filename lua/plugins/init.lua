@@ -54,10 +54,13 @@ return require('packer').startup(function()
 
     -- NERDtree
     use 'preservim/nerdtree'
+    use 'Xuyuanp/nerdtree-git-plugin'
     -- NvimTree
     -- use 'kyazdani42/nvim-tree.lua'
 --  [[      NerdTree no bugs
 --          NerdTree uses complementary icon set and not good as nvimtree's icons
+--          NerdTree no github sign (extra plugin)
+--          NerdTree does not refresh folder structure acc to current file :(
 --          NerdTree written in vimscript
 --          NvimTree blank when opening from startify session
 --          NvimTree doesn't close properly when new file is opened
