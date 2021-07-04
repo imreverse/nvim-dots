@@ -77,13 +77,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/neoterm"
   },
+  nerdtree = {
+    loaded = true,
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nerdtree"
+  },
   ["nvim-bufferline.lua"] = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -104,6 +104,10 @@ _G.packer_plugins = {
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/vim-devicons"
   },
   ["vim-startify"] = {
     loaded = true,

@@ -7,68 +7,84 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
-require('plugins.nvim-tree')
+require('plugins.startify')
 require('plugins.bufferline')
+require('plugins.galaxyline')
+-- require('plugins.nvim-tree')
+require('plugins.neoterm')
 require('plugins.undotree')
 require('plugins.ultisnips')
-require('plugins.startify')
 require('plugins.vim-commentary')
-require('plugins.neoterm')
--- require('plugins.vsnip')
-require('plugins.glx')
 
 -- Plugins
 return require('packer').startup(function()
-    -- packer
+    -- Packer
     use 'wbthomason/packer.nvim'
 
-    -- use "siduck76/nvim-base16.lua"
+    -- Startify
+    use 'mhinz/vim-startify'
+    -- Dashboard
+    -- use 'glepnir/dashboard-nvim'
+--  [[      Startify already configured
+--          Startify has option to view sessions
+--          Dashboard is nice for center view
+--          Dashboard not customized yet, want sessions view
+--  ]]
 
-    -- neovim-tree file explorer
-    use
-    {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
+    -- Bufferline
+    use 'akinsho/nvim-bufferline.lua'
+    -- Barbar
+    -- use 'romgrk/barbar.nvim'
+--  [[      Bufferline has nice colorscheme
+--          Bufferline ability to offset for nvimtree (unable achieve same for nerdtree)
+--          Barbar colorscheme not nice (hard to achieve same results)
+--          Barbar not able to offset properly (some gap is left, plus difficult)
+--          Barbar buffer ordering is messed up
+--          Barbar animations are awesome
+--  ]]
 
-    -- bufferline tabs
-    use
-    {
-        'akinsho/nvim-bufferline.lua',
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
+    -- Galaxyline
+    use 'glepnir/galaxyline.nvim'
+    -- Lualine
+    -- use 'hoob3rt/lualine.nvim'
+    -- Vim Airline
+    -- use 'vim-airline/vim-airline'
+--  [[      Haven't looked into this yet
+--  ]]
 
-    -- galaxyline statusbar
-    use
-    {
-        'glepnir/galaxyline.nvim',
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
+    -- NERDtree
+    use 'preservim/nerdtree'
+    -- NvimTree
+    -- use 'kyazdani42/nvim-tree.lua'
+--  [[      NerdTree no bugs
+--          NerdTree uses complementary icon set and not good as nvimtree's icons
+--          NerdTree written in vimscript
+--          NvimTree blank when opening from startify session
+--          NvimTree doesn't close properly when new file is opened
+--          NvimTree written in lua tho
+--  ]]
 
-    -- neoterm terminal wrapper
+    -- Icons for NERDtree
+    use 'ryanoasis/vim-devicons'
+    -- Icons for galaxyline, bufferline
+    use 'kyazdani42/nvim-web-devicons'
+
+    -- NeoTerm terminal wrapper
     use 'kassio/neoterm'
 
-    -- undotree
+    -- UndoTree
     use 'mbbill/undotree'
 
-    -- commentary comment toggle
-    use 'tpope/vim-commentary'
-
-    -- use 'hrsh7th/vim-vsnip'
-
+    -- UltiSnips easy, but in python
     use 'SirVer/ultisnips'
+    -- Vsnip lsp support, hard to customize in lua
+    -- use 'hrsh7th/vim-vsnip'
+--  [[      UltiSnips super easy, plus already configured
+--          UltiSnips in python tho
+--          Vsnip haven't configured, but super difficult
+--          Vsnip has LSP support, vimscript, etc
+--  ]]
 
-    use 'mhinz/vim-startify'
-
-    -- -- GalaxyLine
-    -- use
-    -- {
-    --     'glepnir/galaxyline.nvim',
-    --     -- branch = 'main',
-    --     -- -- your statusline
-    --     -- config = function() require'my_statusline' end,
-    --     -- -- some optional icons
-    --     -- requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    -- }
-
+    -- Comment Toggle
+    use 'tpope/vim-commentary'
 end)
