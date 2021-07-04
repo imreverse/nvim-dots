@@ -11,6 +11,7 @@ require('plugins.startify')
 require('plugins.bufferline')
 require('plugins.galaxyline')
 -- require('plugins.nvim-tree')
+require('plugins.nvim-treesitter')
 require('plugins.neoterm')
 require('plugins.undotree')
 require('plugins.ultisnips')
@@ -71,6 +72,9 @@ return require('packer').startup(function()
     use 'ryanoasis/vim-devicons'
     -- Icons for galaxyline, bufferline
     use 'kyazdani42/nvim-web-devicons'
+
+    -- Neovim Treesitter
+    use 'nvim-treesitter/nvim-treesitter'
 
     -- NeoTerm terminal wrapper
     use 'kassio/neoterm'

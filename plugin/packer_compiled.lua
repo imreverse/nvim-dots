@@ -89,6 +89,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
