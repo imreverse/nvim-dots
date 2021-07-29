@@ -2,7 +2,7 @@ local o = vim.opt
 local execute = vim.api.nvim_command
 o.clipboard:append { "unnamedplus" }            -- Set clipboard global linux
 o.guicursor     = ''                            -- Set cursor block default
-o.mouse         = 'a'
+o.mouse         = 'n'
 o.undofile      = true                          -- Undofile exists
 o.tabstop       = 4
 o.softtabstop   = 4

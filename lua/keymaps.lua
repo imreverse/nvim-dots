@@ -37,12 +37,13 @@ vim.api.nvim_set_keymap('n', '<C-l>', ':vert resize +2<CR>', { noremap = true, s
 vim.api.nvim_set_keymap('n', '<C-j>', ':resize -1<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-k>', ':resize +1<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-t>', ':Ttoggle<CR>', { noremap = true })
+-- vim.api.nvim_set_keymap('t', '<A-t>', '<ESC>:Ttoggle<CR>', { noremap = true })
 -- C++20 Compile and Execute
 vim.api.nvim_command([[
 autocmd filetype cpp nnoremap <expr> <Leader>c &buftype ==# 'terminal' ? '<C-w><C-w>:w <bar> Topen <bar> T g++ -std=c++20 -o %:r % -fsanitize=address,undefined -Wshadow -Wall -Wfatal-errors <CR><C-w><C-w>G' : ':w <bar> Topen <bar> T g++ -std=c++20 -o %:r % -fsanitize=address,undefined -Wshadow -Wall -Wfatal-errors <CR><C-w><C-w>G<C-w><C-w>'
 ]])
 vim.api.nvim_command([[
-autocmd filetype cpp nnoremap <expr> <Leader>x &buftype ==# 'terminal' ? '<C-w><C-w>:Topen <bar> T ./%:r<CR><C-w><C-w>G' : ':Topen <bar> T ./%:r<CR><C-w><C-w>G'
+autocmd filetype cpp nnoremap <expr> <Leader>x &buftype ==# 'terminal' ? '<C-w><C-w>:Topen <bar> T ./%:r<CR><C-w><C-w>a' : ':Topen <bar> T ./%:r<CR><C-w><C-w>a'
 ]])
 -- -- JAVA Compile and Execute
 -- vim.api.nvim_command([[
@@ -54,6 +55,9 @@ autocmd filetype cpp nnoremap <expr> <Leader>x &buftype ==# 'terminal' ? '<C-w><
 
 
 -- SENSIBLE MAPPINGS
+-- UnMap Shift+J
+vim.api.nvim_set_keymap('n', '<S-j>', '<NOP>', { noremap = true })
+vim.api.nvim_set_keymap('v', '<S-j>', '<NOP>', { noremap = true })
 -- This unsets the "last search pattern" register by hitting return
 vim.api.nvim_set_keymap('n', '<ESC>', ':noh<CR><CR>', { noremap = true, silent = true })
 
@@ -77,7 +81,7 @@ vim.api.nvim_set_keymap('n', '<A-l>', '<C-w>l', { noremap = true })
 
 -- Change working directory to current file's directory
 -- vim.api.nvim_set_keymap('n', '<Leader>da', ':cd %:p:h<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Leader>cd', ':lcd %:p:h<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>cd', ':lcd %:p:h | NERDTreeCWD<CR>', { noremap = true })
 
 vim.api.nvim_set_keymap('n', '<Leader>vv', ':e $HOME/.config/nvim/init.lua<CR>', { noremap = true })
 
