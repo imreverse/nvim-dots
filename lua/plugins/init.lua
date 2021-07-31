@@ -10,39 +10,43 @@ end
 require('plugins.startify')
 require('plugins.bufferline')
 require('plugins.galaxyline')
--- require('plugins.nvim-tree')
+require('plugins.nvim-tree')
 require('plugins.nvim-treesitter')
 require('plugins.neoterm')
+require('plugins.toggleterm')
 require('plugins.undotree')
 require('plugins.ultisnips')
 require('plugins.vim-commentary')
+require('plugins.indent-blankline')
 
 -- Plugins
 return require('packer').startup(function()
+
     -- Packer
     use 'wbthomason/packer.nvim'
 
+
+    --
+    -- Startify no center view
+    -- Dashboard not customized yet, want sessions view
+    --
     -- Startify
     use 'mhinz/vim-startify'
     -- Dashboard
     -- use 'glepnir/dashboard-nvim'
---  [[      Startify already configured
---          Startify has option to view sessions
---          Dashboard is nice for center view
---          Dashboard not customized yet, want sessions view
---  ]]
 
+
+    --
+    -- Bufferline no animations
+    -- Barbar colorscheme not nice (hard to achieve same results)
+    -- Barbar not able to offset properly (some gap is left, plus difficult)
+    -- Barbar buffer ordering is messed up
+    --
     -- Bufferline
     use 'akinsho/nvim-bufferline.lua'
     -- Barbar
     -- use 'romgrk/barbar.nvim'
---  [[      Bufferline has nice colorscheme
---          Bufferline ability to offset for nvimtree (unable achieve same for nerdtree)
---          Barbar colorscheme not nice (hard to achieve same results)
---          Barbar not able to offset properly (some gap is left, plus difficult)
---          Barbar buffer ordering is messed up
---          Barbar animations are awesome
---  ]]
+
 
     -- Galaxyline
     use 'glepnir/galaxyline.nvim'
@@ -50,48 +54,57 @@ return require('packer').startup(function()
     -- use 'hoob3rt/lualine.nvim'
     -- Vim Airline
     -- use 'vim-airline/vim-airline'
---  [[      Haven't looked into this yet
---  ]]
 
+
+    --
+    -- NerdTree no indentation lines
+    -- NerdTree not able to add buffer space in bufferline
+    -- NvimTree no command to refresh folder structure acc to current file :(
+    --
     -- NERDtree
-    use 'preservim/nerdtree'
-    use 'Xuyuanp/nerdtree-git-plugin'
+    -- use 'preservim/nerdtree'
+    -- use 'Xuyuanp/nerdtree-git-plugin'
     -- NvimTree
-    -- use 'kyazdani42/nvim-tree.lua'
---  [[      NerdTree no bugs
---          NerdTree uses complementary icon set and not good as nvimtree's icons
---          NerdTree no github sign (extra plugin)
---          NerdTree does not refresh folder structure acc to current file :(
---          NerdTree written in vimscript
---          NvimTree blank when opening from startify session
---          NvimTree doesn't close properly when new file is opened
---          NvimTree written in lua tho
---  ]]
+    use 'kyazdani42/nvim-tree.lua'
+
 
     -- Icons for NERDtree
     use 'ryanoasis/vim-devicons'
     -- Icons for galaxyline, bufferline
     use 'kyazdani42/nvim-web-devicons'
 
+
     -- Neovim Treesitter
     use 'nvim-treesitter/nvim-treesitter'
+
 
     -- NeoTerm terminal wrapper
     use 'kassio/neoterm'
 
+    -- Nvim-ToggleTerm
+    use "akinsho/nvim-toggleterm.lua"
+
+
     -- UndoTree
     use 'mbbill/undotree'
 
-    -- UltiSnips easy, but in python
+
+    --
+    -- UltiSnips in python tho
+    -- UltiSnips no LSP support
+    -- Vsnip haven't configured, but super difficult
+    --
+    -- UltiSnips
     use 'SirVer/ultisnips'
     -- Vsnip lsp support, hard to customize in lua
     -- use 'hrsh7th/vim-vsnip'
---  [[      UltiSnips super easy, plus already configured
---          UltiSnips in python tho
---          Vsnip haven't configured, but super difficult
---          Vsnip has LSP support, vimscript, etc
---  ]]
+
 
     -- Comment Toggle
     use 'tpope/vim-commentary'
+
+
+    -- -- Indent Blanline
+    use 'lukas-reineke/indent-blankline.nvim'
+
 end)

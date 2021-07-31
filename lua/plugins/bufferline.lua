@@ -1,8 +1,28 @@
 require "bufferline".setup
 {
+    highlights =
+    {
+        buffer_selected =
+        {
+            guifg = normal_fg,
+            guibg = normal_bg,
+            gui = ""
+        },
+    },
     options =
     {
-        offsets = {{filetype = "NERDTree", text = "", padding = 1}},
+        offsets =
+        {
+            {
+                filetype = "NvimTree",
+                text = "Explorer",
+                highlight = "Directory",
+                text_align = "center"
+                -- filetype = "NERDTree",
+                -- text = "",
+                -- padding = 1
+            }
+        },
         buffer_close_icon = "",
         modified_icon = "",
         close_icon = "",

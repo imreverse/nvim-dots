@@ -16,18 +16,30 @@ vim.api.nvim_set_keymap('n', '<A-8>', ':BufferGoto 8<CR>', { noremap = true, sil
 vim.api.nvim_set_keymap('n', '<A-9>', ':BufferLast<CR>',   { noremap = true, silent = true })
 -- Quickly move to a buffer with hotkey
 vim.api.nvim_set_keymap('n', '<Leader>b', ':BufferLinePick<CR>', { noremap = true, silent = true })
+-- Move b/w buffers
+vim.api.nvim_set_keymap('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<TAB>', ':BufferLineCycleNext<CR>', { noremap = true })
+-- Shift buffers
+vim.api.nvim_set_keymap('n', '<A-S-h>', ':BufferLineMovePrev<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<A-S-l>', ':BufferLineMoveNext<CR>', { noremap = true })
+
 
 
 -- Nvim-Tree
 -- -- Change call method in order to shift barbar bufferline accordingly
 -- require('plugins.tree') -- PROBLEM WITH BUFFERLINE OFFSET
 -- vim.api.nvim_set_keymap('n', '<Leader>e', ":lua require'plugins.tree'.toggle_tree()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<A-e>', ":NERDTreeToggle<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<A-e>', ":NERDTreeToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-e>', ":NvimTreeRefresh<CR>:NvimTreeToggle<CR>:NvimTreeToggle<CR>:NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 
 -- UndoTree
 vim.api.nvim_set_keymap('n', '<A-u>', ':UndotreeToggle<CR>', { noremap = true })
 
+-- Vim-Commentary
+vim.api.nvim_set_keymap('n', '<A-/>', ':Commentary<CR>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<A-/>', '<ESC>:Commentary<CR>', { noremap = true })
+vim.api.nvim_set_keymap('v', '<A-/>', ':Commentary<CR>', { noremap = true })
 
 -- Neoterm mappings
 -- todo: Take into account the active split window
@@ -37,6 +49,7 @@ vim.api.nvim_set_keymap('n', '<C-l>', ':vert resize +2<CR>', { noremap = true, s
 vim.api.nvim_set_keymap('n', '<C-j>', ':resize -1<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-k>', ':resize +1<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-t>', ':Ttoggle<CR>', { noremap = true })
+-- vim.api.nvim_set_keymap('n', '<A-t>', ':ToggleTerm<CR>', { noremap = true })
 -- vim.api.nvim_set_keymap('t', '<A-t>', '<ESC>:Ttoggle<CR>', { noremap = true })
 -- C++20 Compile and Execute
 vim.api.nvim_command([[
@@ -61,17 +74,15 @@ vim.api.nvim_set_keymap('v', '<S-j>', '<NOP>', { noremap = true })
 -- This unsets the "last search pattern" register by hitting return
 vim.api.nvim_set_keymap('n', '<ESC>', ':noh<CR><CR>', { noremap = true, silent = true })
 
--- Don't save d to clipboard
+-- Don't save change,delete to clipboard
 vim.api.nvim_set_keymap('v', 'd', '\"_d', { noremap = true })
 vim.api.nvim_set_keymap('n', 'd', '\"_d', { noremap = true })
+vim.api.nvim_set_keymap('v', 'c', '\"_c', { noremap = true })
+vim.api.nvim_set_keymap('n', 'c', '\"_c', { noremap = true })
 
 -- Select All
 vim.api.nvim_set_keymap('n', '<C-a>', 'ggVG', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-a>', '<ESC>ggVG', { noremap = true })
-
--- Move b/w buffers
-vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprev<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', { noremap = true })
 
 -- Move b/w splits
 vim.api.nvim_set_keymap('n', '<A-h>', '<C-w>h', { noremap = true })

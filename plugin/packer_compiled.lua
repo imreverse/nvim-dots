@@ -73,21 +73,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
   neoterm = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/neoterm"
   },
-  nerdtree = {
-    loaded = true,
-    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nerdtree"
-  },
-  ["nerdtree-git-plugin"] = {
-    loaded = true,
-    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin"
-  },
   ["nvim-bufferline.lua"] = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
+  },
+  ["nvim-toggleterm.lua"] = {
+    loaded = true,
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,

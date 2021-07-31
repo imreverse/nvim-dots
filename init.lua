@@ -11,23 +11,25 @@
 --      (Commented java compilation for now)
 -- * nerdtree doesn't refresh folder structure wrt file
 -- * vimcommentary c++ unable to set an autocmd in lua
+-- * Find why nvim first insertion after boot is so slow
+-- * When nvimtree is open and i close buffer, nvimtree
+--      takes over and does not properly close the buffer
 
 -- TODO: {FEATURE-RQSTS}
 -- * Try nvim 0.5 plugins
---      (telescope, fugitive, treesitter)
--- * Bracket matching line, in code, in tree
--- * Customize Galaxyline to your liking
--- * Try to port molokai theme in lua
--- * Highlight current searched text in different color?
--- * Change neoterm font size? Maybe smaller
+--      (telescope, fugitive, lsp)
 -- * Code folding inside a particular scope??
--- * vimcommentry change keybind to alt+/
 -- * Change current highlighted search word in orange?
+-- * MEDIUM PRIORITY
+-- * Change and configure toggleterm
+-- * Change neoterm font size? Maybe smaller
+-- * Try to port molokai theme in lua
 -- * Change the escape behaviour to move back to prev line
--- * For god's sake, map shift+J to nothing, it's annoying
--- * Find why nvim first insertion after boot is so slow
+-- * LOW PRIORITY
 -- * When in terminal in terminal mode, switch using alt+t
--- * Don't have a tab for neoterm on bufferline?
+-- * Bracket matching line, in code, in tree (highlt grp)
+-- * Customize Galaxyline to your liking
+
 
 -- Plug Plugin Manager [plg] --------------------------
 require('plugins')
