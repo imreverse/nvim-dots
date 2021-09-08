@@ -8,15 +8,35 @@ local gls = gl.section
 gl.short_line_list = { 'packer', 'NvimTree', 'Outline', 'LspTrouble' }
 
 local colors = {
+
+
+    -- orange = "#d18616",
+    -- black = themes({dark = "#24292e", dimmed = "#22272e", light = "#697179"}),
+    -- brightBlack = themes({dark = "#666666", dimmed = "#636e7b", light = "#666666"}),
+    -- white = themes({dark = "#b1bac4", dimmed = "#909dab", light = "#e1e4e8"}),
+    -- brightWhite = themes({dark = "#e5e5e5", dimmed = "#cdd9e5", light = "#a5a5a5"}),
+    -- red = themes({dark = "#f14c4c", dimmed = "#ff938a", light = "#d03d3d"}),
+    -- brightRed = themes({dark = "#f14c4c", dimmed = "#ff938a", light = "#cd3131"}),
+    -- green = themes({dark = "#23d18b", dimmed = "#6bc46d", light = "#14ce14"}),
+    -- brightGreen = themes({dark = "#23d18b", dimmed = "#6bc46d", light = "#14ce14"}),
+    -- yellow = themes({dark = "#e2e210", dimmed = "#c69026", light = "#949800"}),
+    -- brightYellow = themes({dark = "#f5f543", dimmed = "#daaa3f", light = "#b5ba00"}),
+    -- blue = themes({dark = "#3b8eea", dimmed = "#6cb6ff", light = "#0451a5"}),
+    -- brightBlue = themes({dark = "#3b8eea", dimmed = "#6cb6ff", light = "#0451a5"}),
+    -- magenta = themes({dark = "#bc3fbc", dimmed = "#b083f0", light = "#bc05bc"}),
+    -- brightMagenta = themes({dark = "#d670d6", dimmed = "#dcbdfb", light = "#bc05bc"}),
+    -- cyan = themes({dark = "#29b7da", dimmed = "#56d4dd", light = "#0598bc"}),
+    -- brightCyan = themes({dark = "#29b8db", dimmed = "#56d4dd", light = "#0598bc"}),
+
     bg = '#282c34',
     fg = '#abb2bf',
     section_bg = '#38393f',
     blue = '#61afef',
-    green = '#98c379',
+    green = '#6bc46d',
     purple = '#c678dd',
     orange = '#e5c07b',
     red = '#e06c75',
-    yellow = '#e5c07b',
+    yellow = '#e2e210',
     darkgrey = '#2c323d',
     middlegrey = '#8791A5',
 }
@@ -45,11 +65,11 @@ end
 
 local mode_color = function()
     local mode_colors = {
-        [110] = colors.green,
-        [105] = colors.blue,
-        [99] = colors.green,
-        [116] = colors.blue,
-        [118] = colors.purple,
+        [110] = colors.yellow,  -- NORMAL
+        [105] = colors.blue,    -- INSERT
+        [99] = colors.red,      -- TERMINAL
+        [116] = colors.green,   -- COMMAND
+        [118] = colors.purple,  -- VISUAL
         [22] = colors.purple,
         [86] = colors.purple,
         [82] = colors.red,
@@ -236,7 +256,8 @@ gls.left[4] = {
         provider = get_current_file_name,
         condition = buffer_not_empty,
         highlight = { colors.fg, colors.section_bg },
-        separator = '',
+        -- separator = '',
+        separator = '',
         separator_highlight = { colors.section_bg, colors.bg },
     },
 }
@@ -395,8 +416,9 @@ gls.right[8] = {
     PerCent = {
         provider = 'LinePercent',
         separator = ' ',
-        separator_highlight = { colors.blue, colors.bg },
-        highlight = { colors.darkgrey, colors.blue },
+        -- separator = ' ',
+        separator_highlight = { colors.yellow, colors.bg },
+        highlight = { colors.darkgrey, colors.yellow },
     },
 }
 -- gls.right[9] = {

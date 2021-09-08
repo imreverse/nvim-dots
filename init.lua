@@ -9,7 +9,6 @@
 -- TODO: {PROBLEMOS}
 -- * unable to recompile c++ when java file is opened
 --      (Commented java compilation for now)
--- * nerdtree doesn't refresh folder structure wrt file
 -- * vimcommentary c++ unable to set an autocmd in lua
 -- * Find why nvim first insertion after boot is so slow
 -- * When nvimtree is open and i close buffer, nvimtree

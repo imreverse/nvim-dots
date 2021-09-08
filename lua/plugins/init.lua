@@ -16,6 +16,7 @@ require('plugins.neoterm')
 require('plugins.toggleterm')
 require('plugins.undotree')
 require('plugins.ultisnips')
+-- require('plugins.luasnip')
 require('plugins.vim-commentary')
 require('plugins.indent-blankline')
 
@@ -25,6 +26,8 @@ return require('packer').startup(function()
     -- Packer
     use 'wbthomason/packer.nvim'
 
+    -- Search with count 99+
+    use 'google/vim-searchindex'
 
     --
     -- Startify no center view
@@ -68,8 +71,8 @@ return require('packer').startup(function()
     use 'kyazdani42/nvim-tree.lua'
 
 
-    -- Icons for NERDtree
-    use 'ryanoasis/vim-devicons'
+    -- -- Icons for NERDtree
+    -- use 'ryanoasis/vim-devicons'
     -- Icons for galaxyline, bufferline
     use 'kyazdani42/nvim-web-devicons'
 
@@ -98,6 +101,8 @@ return require('packer').startup(function()
     use 'SirVer/ultisnips'
     -- Vsnip lsp support, hard to customize in lua
     -- use 'hrsh7th/vim-vsnip'
+    -- LuaSnip
+    -- use 'L3MON4D3/LuaSnip'
 
 
     -- Comment Toggle

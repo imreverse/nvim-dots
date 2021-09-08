@@ -117,9 +117,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/vim-commentary"
   },
-  ["vim-devicons"] = {
+  ["vim-searchindex"] = {
     loaded = true,
-    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/vim-devicons"
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/vim-searchindex"
   },
   ["vim-startify"] = {
     loaded = true,
