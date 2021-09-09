@@ -23,7 +23,9 @@ vim.api.nvim_set_keymap('n', '<TAB>', ':BufferLineCycleNext<CR>', { noremap = tr
 vim.api.nvim_set_keymap('n', '<A-S-h>', ':BufferLineMovePrev<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<A-S-l>', ':BufferLineMoveNext<CR>', { noremap = true })
 
-
+-- Telescope
+vim.api.nvim_set_keymap('n', '<Leader>ff', ':lua require"telescope.builtin".find_files({ hidden = true })<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fg', ':lua require"telescope.builtin".live_grep({ hidden = true })<CR>', { noremap = true, silent = true })
 
 -- Nvim-Tree
 -- -- Change call method in order to shift barbar bufferline accordingly
@@ -31,6 +33,7 @@ vim.api.nvim_set_keymap('n', '<A-S-l>', ':BufferLineMoveNext<CR>', { noremap = t
 -- vim.api.nvim_set_keymap('n', '<Leader>e', ":lua require'plugins.tree'.toggle_tree()<CR>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<A-e>', ":NERDTreeToggle<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-e>', ":NvimTreeRefresh<CR>:NvimTreeToggle<CR>:NvimTreeToggle<CR>:NvimTreeToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>l', ":NvimTreeFindFile<CR>", { noremap = true})
 
 
 -- UndoTree
@@ -72,7 +75,7 @@ autocmd filetype cpp nnoremap <expr> <Leader>x &buftype ==# 'terminal' ? '<C-w><
 vim.api.nvim_set_keymap('n', '<S-j>', '<NOP>', { noremap = true })
 vim.api.nvim_set_keymap('v', '<S-j>', '<NOP>', { noremap = true })
 -- This unsets the "last search pattern" register by hitting return
-vim.api.nvim_set_keymap('n', '<ESC>', ':noh<CR><CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<ESC>', ':noh<CR><CR>k', { noremap = true, silent = true })
 
 -- Don't save change,delete to clipboard
 vim.api.nvim_set_keymap('v', 'd', '\"_d', { noremap = true })

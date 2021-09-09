@@ -10,22 +10,25 @@
 -- * unable to recompile c++ when java file is opened
 --      (Commented java compilation for now)
 -- * vimcommentary c++ unable to set an autocmd in lua
--- * Find why nvim first insertion after boot is so slow
 -- * When nvimtree is open and i close buffer, nvimtree
 --      takes over and does not properly close the buffer
+--      (isn't a problem of plugin, but of vim behaviour)
 
 -- TODO: {FEATURE-RQSTS}
+-- * Use a different snippet manager other than ultisnip
+--      ( it slows neovim's first insert )
 -- * Try nvim 0.5 plugins
---      (telescope, fugitive, lsp)
+--      (fugitive, lsp)
 -- * Code folding inside a particular scope??
+-- * Command-click similar for vim?
 -- * Change current highlighted search word in orange?
+-- * Nvim Telescope search for only files with exact name
 -- * MEDIUM PRIORITY
 -- * Change and configure toggleterm
 -- * Change neoterm font size? Maybe smaller
 -- * Try to port molokai theme in lua
 -- * Change the escape behaviour to move back to prev line
 -- * LOW PRIORITY
--- * When in terminal in terminal mode, switch using alt+t
 -- * Bracket matching line, in code, in tree (highlt grp)
 -- * Customize Galaxyline to your liking
 

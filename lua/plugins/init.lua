@@ -19,6 +19,7 @@ require('plugins.ultisnips')
 -- require('plugins.luasnip')
 require('plugins.vim-commentary')
 require('plugins.indent-blankline')
+require('plugins.telescope')
 
 -- Plugins
 return require('packer').startup(function()
@@ -111,5 +112,12 @@ return require('packer').startup(function()
 
     -- -- Indent Blanline
     use 'lukas-reineke/indent-blankline.nvim'
+
+    -- Neovim Telescope
+    use
+    {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
 end)
