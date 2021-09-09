@@ -18,11 +18,13 @@
 -- * Use a different snippet manager other than ultisnip
 --      ( it slows neovim's first insert )
 -- * Try nvim 0.5 plugins
---      (fugitive, lsp)
+--      (lsp)
 -- * Code folding inside a particular scope??
 -- * Command-click similar for vim?
 -- * Change current highlighted search word in orange?
 -- * Nvim Telescope search for only files with exact name
+-- * Nvim Telescope allow scrollable list (open issue)
+-- * Nvim Telescope remember search history and maintain order
 -- * MEDIUM PRIORITY
 -- * Change and configure toggleterm
 -- * Change neoterm font size? Maybe smaller

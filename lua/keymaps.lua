@@ -44,6 +44,15 @@ vim.api.nvim_set_keymap('n', '<A-/>', ':Commentary<CR>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<A-/>', '<ESC>:Commentary<CR>', { noremap = true })
 vim.api.nvim_set_keymap('v', '<A-/>', ':Commentary<CR>', { noremap = true })
 
+-- Vim-Signify
+vim.api.nvim_set_keymap('n', '<Leader>hd', ':SignifyHunkDiff<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>hu', ':SignifyHunkUndo<CR>', { noremap = true })
+
+-- Vim-Fugitive
+vim.api.nvim_set_keymap('n', '<Leader>gs', ':G<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>gh', ':diffget //2<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>gl', ':diffget //3<CR>', { noremap = true })
+
 -- Neoterm mappings
 -- todo: Take into account the active split window
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true })

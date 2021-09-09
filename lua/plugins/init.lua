@@ -120,4 +120,10 @@ return require('packer').startup(function()
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    -- Vim Signify
+    use 'mhinz/vim-signify'
+
+    -- Vim Fugitive
+    use 'tpope/vim-fugitive'
+
 end)
