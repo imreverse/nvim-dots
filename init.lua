@@ -25,6 +25,7 @@
 -- * Nvim Telescope search for only files with exact name
 -- * MEDIUM PRIORITY
 -- * Change and configure toggleterm
+-- * Change nvimtree font size? Maybe smallere
 -- * Change neoterm font size? Maybe smaller
 -- * Try to port molokai theme in lua
 -- * Change the escape behaviour to move back to prev line
