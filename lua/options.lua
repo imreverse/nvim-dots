@@ -2,7 +2,7 @@ local o = vim.opt
 local execute = vim.api.nvim_command
 o.clipboard:append { "unnamedplus" }            -- Set clipboard global linux
 o.guicursor     = ''                            -- Set cursor block default
-o.mouse         = 'n'
+-- o.mouse         = 'n'
 o.undofile      = true                          -- Undofile exists
 o.tabstop       = 4
 o.softtabstop   = 4
@@ -17,6 +17,14 @@ o.splitright    = true                          -- Open vertical split view righ
 o.hidden        = true                          -- Hide buffer when opening new file
 o.scrolloff     = 5                             -- Scroll offset
 o.termguicolors = true                          -- TermGUIcolor
+o.foldmethod    = 'manual'
+-- o.foldexpr      = 'nvim_treesitter#foldexpr()'
+o.foldtext      = 'getline(v:foldstart).\'...\'.trim(getline(v:foldend))'
+o.fillchars     = 'fold: '
+o.foldnestmax   = 3
+o.foldminlines  = 1
+-- o.foldlevelstart= 99
+
 execute('au BufWritePre * %s/\\s\\+$//e')       -- Remove trailing spaces [may not be safe]
 
 -- problemo postponed

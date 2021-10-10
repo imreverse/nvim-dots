@@ -69,17 +69,25 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/LuaSnip"
+  },
   ["galaxyline.nvim"] = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
   },
-  neoterm = {
+  kommentary = {
     loaded = true,
-    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/neoterm"
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/kommentary"
   },
   ["nvim-bufferline.lua"] = {
     loaded = true,
@@ -113,17 +121,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
-  ultisnips = {
-    loaded = true,
-    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/ultisnips"
-  },
   undotree = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/undotree"
   },
-  ["vim-commentary"] = {
+  ["vim-current-search-match"] = {
     loaded = true,
-    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/vim-commentary"
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/vim-current-search-match"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -132,10 +136,6 @@ _G.packer_plugins = {
   ["vim-searchindex"] = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/vim-searchindex"
-  },
-  ["vim-signify"] = {
-    loaded = true,
-    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/vim-signify"
   },
   ["vim-startify"] = {
     loaded = true,

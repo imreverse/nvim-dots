@@ -35,7 +35,7 @@ require('telescope').setup
     file_ignore_patterns =
     {
         "node_modules",
-        ".git"
+        -- ".git"
     },
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     winblend = 0,
@@ -53,3 +53,6 @@ require('telescope').setup
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   }
 }
+
+vim.api.nvim_set_keymap('n', '<Leader>ff', ':lua require"telescope.builtin".find_files({ hidden = true })<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fg', ':lua require"telescope.builtin".live_grep({ hidden = true })<CR>', { noremap = true, silent = true })

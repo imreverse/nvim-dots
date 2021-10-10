@@ -12,118 +12,73 @@ require('plugins.bufferline')
 require('plugins.galaxyline')
 require('plugins.nvim-tree')
 require('plugins.nvim-treesitter')
-require('plugins.neoterm')
 require('plugins.toggleterm')
 require('plugins.undotree')
-require('plugins.ultisnips')
--- require('plugins.luasnip')
-require('plugins.vim-commentary')
+require('plugins.luasnip')
+require('plugins.kommentary')
 require('plugins.indent-blankline')
 require('plugins.telescope')
+require('plugins.gitsigns')
 
 -- Plugins
 return require('packer').startup(function()
 
-    -- Packer
     use 'wbthomason/packer.nvim'
-
-    -- Search with count 99+
-    use 'google/vim-searchindex'
-
-    --
-    -- Startify no center view
-    -- Dashboard not customized yet, want sessions view
-    --
-    -- Startify
-    use 'mhinz/vim-startify'
-    -- Dashboard
-    -- use 'glepnir/dashboard-nvim'
-
-
-    --
-    -- Bufferline no animations
-    -- Barbar colorscheme not nice (hard to achieve same results)
-    -- Barbar not able to offset properly (some gap is left, plus difficult)
-    -- Barbar buffer ordering is messed up
-    --
-    -- Bufferline
-    use 'akinsho/nvim-bufferline.lua'
-    -- Barbar
-    -- use 'romgrk/barbar.nvim'
-
-
-    -- Galaxyline
-    use 'glepnir/galaxyline.nvim'
-    -- Lualine
-    -- use 'hoob3rt/lualine.nvim'
-    -- Vim Airline
-    -- use 'vim-airline/vim-airline'
-
-
-    --
-    -- NerdTree no indentation lines
-    -- NerdTree not able to add buffer space in bufferline
-    -- NvimTree no command to refresh folder structure acc to current file :(
-    --
-    -- NERDtree
-    -- use 'preservim/nerdtree'
-    -- use 'Xuyuanp/nerdtree-git-plugin'
-    -- NvimTree
-    use 'kyazdani42/nvim-tree.lua'
-
-
-    -- -- Icons for NERDtree
-    -- use 'ryanoasis/vim-devicons'
-    -- Icons for galaxyline, bufferline
-    use 'kyazdani42/nvim-web-devicons'
-
-
-    -- Neovim Treesitter
+    use 'airblade/vim-current-search-match'     -- Highlight current search term
+    use 'google/vim-searchindex'                -- Search with count 99+
     use 'nvim-treesitter/nvim-treesitter'
-
-
-    -- NeoTerm terminal wrapper
-    use 'kassio/neoterm'
-
-    -- Nvim-ToggleTerm
+    -- use 'neovim/nvim-lspconfig'
     use "akinsho/nvim-toggleterm.lua"
-
-
-    -- UndoTree
     use 'mbbill/undotree'
-
-
-    --
-    -- UltiSnips in python tho
-    -- UltiSnips no LSP support
-    -- Vsnip haven't configured, but super difficult
-    --
-    -- UltiSnips
-    use 'SirVer/ultisnips'
-    -- Vsnip lsp support, hard to customize in lua
-    -- use 'hrsh7th/vim-vsnip'
-    -- LuaSnip
-    -- use 'L3MON4D3/LuaSnip'
-
-
-    -- Comment Toggle
-    use 'tpope/vim-commentary'
-
-
-    -- -- Indent Blanline
+    -- use 'SirVer/ultisnips'
+    use 'L3MON4D3/LuaSnip'
+    use 'b3nj5m1n/kommentary'
     use 'lukas-reineke/indent-blankline.nvim'
-
-    -- Neovim Telescope
+    use 'tpope/vim-fugitive'
     use
     {
         'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = {{'nvim-lua/plenary.nvim'}}
+    }
+    use
+    {
+        'lewis6991/gitsigns.nvim',
+        requires = {{'nvim-lua/plenary.nvim'}}
     }
 
-    -- Vim Signify
-    use 'mhinz/vim-signify'
+    -- Startify no center view
+    use 'mhinz/vim-startify'
+    -- use 'glepnir/dashboard-nvim'
 
-    -- Vim Fugitive
-    use 'tpope/vim-fugitive'
+    -- Bufferline no animations
+    -- Barbar colorscheme bad
+    -- Barbar offset bad
+    -- Barbar buffer ordering messed up
+    use
+    {
+        'akinsho/nvim-bufferline.lua',
+        requires = {{'kyazdani42/nvim-web-devicons'}}
+    }
+    -- use 'romgrk/barbar.nvim'
 
+    use
+    {
+        'glepnir/galaxyline.nvim',
+        requires = {{'kyazdani42/nvim-web-devicons'}}
+    }
+    -- use 'hoob3rt/lualine.nvim'
+    -- use 'vim-airline/vim-airline'
+
+    -- NerdTree no indentation lines
+    -- NerdTree not able to add buffer space in bufferline
+    use 'kyazdani42/nvim-tree.lua'
+    -- use
+    -- {
+    --     'preservim/nerdtree',
+    --     requires =
+    --     {
+    --         {'Xuyuanp/nerdtree-git-plugin'},
+    --         {'ryanoasis/vim-devicons'}
+    --     }
+    -- }
 end)
