@@ -19,6 +19,7 @@ require('plugins.kommentary')
 require('plugins.indent-blankline')
 require('plugins.telescope')
 require('plugins.gitsigns')
+require('plugins.vim-fugitive')
 
 -- Plugins
 return require('packer').startup(function()

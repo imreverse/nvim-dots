@@ -6,7 +6,7 @@ vim.cmd('cnoreabbrev PI PackerInstall')
 vim.cmd('cnoreabbrev PS PackerSync')
 
 -- Function{} code fold
-key('n', 'zc', '[{zf%', { noremap = true, silent = true })
+key('n', 'zc', 'zfa{', { noremap = true, silent = true })
 
 -- Unmap shift+J
 key('n', '<S-j>', '<NOP>', { noremap = true })
@@ -17,6 +17,7 @@ key('n', '<ESC>', ':noh<CR><CR>k', { noremap = true, silent = true })
 -- Don't save change,delete to clipboard
 key('v', 'd', '\"_d', { noremap = true })
 key('n', 'd', '\"_d', { noremap = true })
+key('v', 'p', '\"_dP', { noremap = true })
 key('v', 'c', '\"_c', { noremap = true })
 key('n', 'c', '\"_c', { noremap = true })
 

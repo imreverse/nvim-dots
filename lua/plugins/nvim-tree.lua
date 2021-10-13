@@ -1,12 +1,13 @@
--- TODO
--- Change parent view?
--- Option to add files, folders
--- Option to hide/unhide dot folders,files
 vim.g.nvim_tree_highlight_opened_files  = 2
 vim.g.nvim_tree_group_empty = 1
 -- vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_indent_markers = 1
 -- vim.g.nvim_tree_width                   = '20'
+
+vim.api.nvim_set_keymap('n', '<A-e>', ":NvimTreeRefresh<CR>:NvimTreeToggle<CR>:NvimTreeToggle<CR>:NvimTreeToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>el', ":NvimTreeFindFile<CR>", { noremap = true})
+-- NOT WORKING
+-- vim.api.nvim_set_keymap('n', '<Leader>ec', "gg<CR>:NvimTreeToggle<CR>:NvimTreeToggle<CR>", { noremap = true})
 -- vim.g.nvim_tree_auto_ignore_ft = { 'startify', 'dashboard' }
 
 -- following options are the default
@@ -35,7 +36,7 @@ require'nvim-tree'.setup
     -- hijack the cursor in the tree to put it at the start of the filename
     hijack_cursor       = false,
     -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
-    update_cwd          = false,
+    update_cwd          = true,
     -- show lsp diagnostics in the signcolumn
     lsp_diagnostics     = false,
     -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
@@ -79,6 +80,3 @@ require'nvim-tree'.setup
         }
     }
 }
-
-vim.api.nvim_set_keymap('n', '<A-e>', ":NvimTreeRefresh<CR>:NvimTreeToggle<CR>:NvimTreeToggle<CR>:NvimTreeToggle<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>l', ":NvimTreeFindFile<CR>", { noremap = true})

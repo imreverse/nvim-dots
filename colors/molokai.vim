@@ -70,9 +70,9 @@ hi ModeMsg         guifg=#ffd945
 hi MoreMsg         guifg=#ffd945
 hi Operator        guifg=#FF3F4F
 
-" complete menu
+" complete menu >> vim-current-search-match uses PmenuSel <<
 hi Pmenu           guifg=#19D1EF guibg=#000000
-hi PmenuSel                      guibg=#FFFFFF
+hi PmenuSel        guifg=#000000 guibg=#F0A30A
 hi PmenuSbar                     guibg=#080808
 hi PmenuThumb      guifg=#19D1EF
 
