@@ -25,7 +25,7 @@ local no_errors, error_msg = pcall(function()
   else
     time = function(chunk, start) end
   end
-  
+
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -73,10 +73,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/LuaSnip"
   },
-  ["galaxyline.nvim"] = {
-    loaded = true,
-    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
@@ -88,6 +84,10 @@ _G.packer_plugins = {
   kommentary = {
     loaded = true,
     path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/kommentary"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/r3verse/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
   ["nvim-bufferline.lua"] = {
     loaded = true,

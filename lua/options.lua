@@ -29,6 +29,7 @@ o.ignorecase    = true
 o.smartcase     = true
 
 execute('au BufWritePre * %s/\\s\\+$//e')       -- Remove trailing spaces [may not be safe]
+execute('au SwapExists * let v:swapchoice = "o"')
 
 -- problemo postponed
 -- o.formatoptions = "-=cro"                        -- Disable auto comment on new line

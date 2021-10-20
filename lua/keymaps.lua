@@ -8,6 +8,9 @@ vim.cmd('cnoreabbrev PS PackerSync')
 -- Function{} code fold
 key('n', 'zc', 'zfa{', { noremap = true, silent = true })
 
+-- Undo till last save (Better use undoTree instead)
+key('n', 'U', ':earlier 1f<CR>', { noremap = true, silent = true })
+
 -- Unmap shift+J
 key('n', '<S-j>', '<NOP>', { noremap = true })
 key('v', '<S-j>', '<NOP>', { noremap = true })

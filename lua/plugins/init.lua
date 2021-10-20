@@ -7,9 +7,10 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
+require('plugins.nvim-web-devicons')
 require('plugins.startify')
 require('plugins.bufferline')
-require('plugins.galaxyline')
+require('plugins.lualine')
 require('plugins.nvim-tree')
 require('plugins.nvim-treesitter')
 require('plugins.toggleterm')
@@ -64,10 +65,9 @@ return require('packer').startup(function()
 
     use
     {
-        'glepnir/galaxyline.nvim',
+        'hoob3rt/lualine.nvim',
         requires = {{'kyazdani42/nvim-web-devicons'}}
     }
-    -- use 'hoob3rt/lualine.nvim'
     -- use 'vim-airline/vim-airline'
 
     -- NerdTree no indentation lines
