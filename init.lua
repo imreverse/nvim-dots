@@ -50,5 +50,7 @@ local execute = vim.api.nvim_command
 -- ]])
 
 -- TokyoNight
+-- vim.g.tokyonight_style = "day"
 -- vim.g.tokyonight_style = "night"
+-- vim.g.tokyonight_transparent = true
 execute[[colorscheme tokyonight]]
