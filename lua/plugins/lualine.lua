@@ -72,39 +72,58 @@ local function readOnly()
     return ''
 end
 
+-- Default
+-- local leftComSep = '│'
+-- local rightComSep ='│'
+-- Bubbles
+-- local leftSecSep = ''
+-- local leftComSep = ''
+-- local rightSecSep = ''
+-- local rightComSep =''
+-- Inclined
+local leftSecSep = ''
+local leftComSep = '/'
+local rightSecSep = ''
+local rightComSep ='/'
+-- Arrows
+-- local leftSecSep = ''
+-- local leftComSep = ''
+-- local rightSecSep = ''
+-- local rightComSep =''
+
 require'lualine'.setup
 {
     options =
     {
         icons_enabled = true,
-        theme = r3v,
-        -- Default
-        section_separators = {},
-        component_separators = {'│', '│'},
-        -- Bubbles
-        -- section_separators = {'', ''},
-        -- component_separators = {'', ''},
-        -- Inclined
-        -- section_separators = {'', ''},
-        -- component_separators = {'/', '/'},
-        -- Arrows
-        -- section_separators = {'', ''},
-        -- component_separators = {'', ''},
+        theme = 'tokyonight',
+        section_separators = { left = leftSecSep, right = rightSecSep },
+        component_separators = { left = leftComSep, right = rightComSep },
         disabled_filetypes = {}
     },
     sections =
     {
-        lualine_a = {'mode'},
+        lualine_a =
+        {
+            {
+                'mode',
+                separator = { left = rightSecSep, right = leftSecSep },
+                padding = 1
+            }
+        },
         lualine_b =
         {
             'branch',
             {
                 'diff',
-                colored = true, -- displays diff status in color if set to true
-                -- all colors are in format #rrggbb
-                color_added = colors.black, -- changes diff's added foreground color
-                color_modified = colors.black, -- changes diff's modified foreground color
-                color_removed = colors.black, -- changes diff's removed foreground color
+                colored = false, -- displays diff status in color if set to true
+                -- -- all colors are in format #rrggbb
+                -- diff_color =
+                -- {
+                --     added = colors.black, -- changes diff's added foreground color
+                --     modified = colors.black, -- changes diff's modified foreground color
+                --     removed = colors.black -- changes diff's removed foreground color
+                -- },
                 symbols = {added = '+', modified = '~', removed = '-'} -- changes diff symbols
             }
         },
@@ -139,8 +158,10 @@ require'lualine'.setup
         {
             {
                 'filetype',
-                upper = true,
-                colored = false
+                fmt = string.upper,
+                colored = false,
+                separator = { left = rightSecSep, right = leftSecSep },
+                padding = 1
             }
         }
     },
@@ -154,7 +175,7 @@ require'lualine'.setup
             {getPos},
             {
                 'filetype',
-                upper = true,
+                fmt = string.upper,
                 colored = false
             }
         },

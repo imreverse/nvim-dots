@@ -27,7 +27,6 @@
 -- * If there is a plugin error, try to install it instead
 --      just throwing the error <Add try catch in plugins>
 -- * NvimTree keymap to collapse all the directories
--- * NvimTree darker contrast?
 -- * Jump back in history using alt+[ and fwd alt+]
 -- * Keep search query for diff buffer separate
 
@@ -43,8 +42,13 @@ require('plugins')
 
 -- Color Schemes [clr] --------------------------------
 local execute = vim.api.nvim_command
-execute([[
-colorscheme moluakai
-highlight Comment cterm=italic gui=italic
-]])
 
+-- Moluakai
+-- execute([[
+-- colorscheme moluakai
+-- highlight Comment cterm=italic gui=italic
+-- ]])
+
+-- TokyoNight
+-- vim.g.tokyonight_style = "night"
+execute[[colorscheme tokyonight]]

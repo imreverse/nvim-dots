@@ -25,6 +25,7 @@ require('plugins.vim-fugitive')
 -- Plugins
 return require('packer').startup(function()
 
+    use 'folke/tokyonight.nvim'
     use 'wbthomason/packer.nvim'
     use 'airblade/vim-current-search-match'     -- Highlight current search term
     use 'google/vim-searchindex'                -- Search with count 99+
@@ -65,7 +66,7 @@ return require('packer').startup(function()
 
     use
     {
-        'hoob3rt/lualine.nvim',
+        'nvim-lualine/lualine.nvim',
         requires = {{'kyazdani42/nvim-web-devicons'}}
     }
     -- use 'vim-airline/vim-airline'

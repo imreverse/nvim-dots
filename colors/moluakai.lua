@@ -153,6 +153,22 @@ fg("Title","#ef5939")
 fg_bg("TabLineFill",c.back,c.back)
 fg_bg("TabLine",c.back,"#808080","none")
 
+-- NvimTree
+fg("NvimTreeEmptyFolderName", c.blue)
+fg("NvimTreeEndOfBuffer", c.black)
+-- fg("NvimTreeFolderIcon", folder_bg)
+-- fg("NvimTreeFolderName", folder_bg)
+fg("NvimTreeGitDirty", c.red)
+-- fg("NvimTreeIndentMarker", c.white)
+bg("NvimTreeNormal", c.black)
+bg("NvimTreeNormalNC", c.black)
+fg("NvimTreeOpenedFolderName", c.blue)
+fg("NvimTreeRootFolder", c.red .. " gui=underline") -- enable underline for root folder in nvim tree
+fg_bg("NvimTreeStatuslineNc", c.black, c.black)
+fg("NvimTreeVertSplit", c.black)
+bg("NvimTreeVertSplit", c.black)
+-- fg_bg("NvimTreeWindowPicker", c.red, black2)
+
 -- " Must be at the end, because of ctermbg=234 bug.
 -- " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 vim.opt.background="dark"
