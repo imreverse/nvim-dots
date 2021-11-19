@@ -18,6 +18,7 @@ require'nvim-treesitter.configs'.setup
         "cmake",
         "fish",
         "html",
+        "graphql",
         "java",
         "javascript",
         "json",
@@ -26,6 +27,9 @@ require'nvim-treesitter.configs'.setup
         "lua",
         "python",
         "regex",
+        "tsx",
+        "typescript",
+        "vim",
         "yaml"
     },
 }
