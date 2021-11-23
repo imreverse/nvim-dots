@@ -35,7 +35,7 @@ require('telescope').setup
     file_ignore_patterns =
     {
         "node_modules",
-        -- ".git"
+        ".git/.*"
     },
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     winblend = 0,
@@ -48,6 +48,10 @@ require('telescope').setup
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+    cache_picker =
+    {
+        num_pickers = -1
+    },
 
     -- Developer configurations: Not meant for general override
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
