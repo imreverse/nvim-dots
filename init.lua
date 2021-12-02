@@ -14,6 +14,8 @@
 -- * Jump back in history using alt+[ and fwd alt+]
 -- * Keep search query for diff buffer separate
 -- * Try a better terminal management approach
+-- * Better comment manager (like jsx,tsx, and lua,vim)
+-- * Describe a way to search visually selected word
 
 
 -- Key Mappings [key] ---------------------------------
