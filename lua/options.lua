@@ -27,6 +27,7 @@ o.foldminlines  = 1
 -- o.foldlevelstart= 99
 o.ignorecase    = true
 o.smartcase     = true
+o.inccommand    = 'nosplit'                     -- Live substitution
 
 -- Show gutter for help files
 vim.api.nvim_command([[

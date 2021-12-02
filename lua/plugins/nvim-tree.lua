@@ -14,7 +14,8 @@ vim.api.nvim_set_var('nvim_tree_icons', { default = '' })
 -- }
 
 vim.api.nvim_set_keymap('n', '<A-e>', ":NvimTreeRefresh<CR>:NvimTreeToggle<CR>:NvimTreeToggle<CR>:NvimTreeToggle<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>el', ":NvimTreeFindFile<CR>", { noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>el', ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>ec', ":lua require'nvim-tree.lib'.collapse_all()<CR>", { noremap = true, silent = true })
 -- NOT WORKING
 -- vim.api.nvim_set_keymap('n', '<Leader>ec', "gg<CR>:NvimTreeToggle<CR>:NvimTreeToggle<CR>", { noremap = true})
 -- vim.g.nvim_tree_auto_ignore_ft = { 'startify', 'dashboard' }

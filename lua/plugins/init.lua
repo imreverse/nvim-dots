@@ -7,80 +7,89 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
-require('plugins.nvim-web-devicons')
-require('plugins.startify')
-require('plugins.bufferline')
-require('plugins.lualine')
-require('plugins.nvim-tree')
-require('plugins.nvim-treesitter')
-require('plugins.toggleterm')
-require('plugins.undotree')
-require('plugins.luasnip')
-require('plugins.kommentary')
-require('plugins.indent-blankline')
-require('plugins.telescope')
-require('plugins.gitsigns')
-require('plugins.vim-fugitive')
-
 -- Plugins
 return require('packer').startup(function()
-
-    use 'folke/tokyonight.nvim'
-    use 'wbthomason/packer.nvim'
-    use 'airblade/vim-current-search-match'     -- Highlight current search term
-    use 'google/vim-searchindex'                -- Search with count 99+
-    use 'nvim-treesitter/nvim-treesitter'
-    -- use 'neovim/nvim-lspconfig'
-    use "akinsho/nvim-toggleterm.lua"
-    use 'mbbill/undotree'
-    -- use 'SirVer/ultisnips'
-    use 'L3MON4D3/LuaSnip'
-    use 'b3nj5m1n/kommentary'
-    use 'lukas-reineke/indent-blankline.nvim'
-    use 'tpope/vim-fugitive'
+    use 'wbthomason/packer.nvim'                        -- Plugin manager
+    use 'folke/tokyonight.nvim'                         -- Colorscheme
     use
     {
-        'nvim-telescope/telescope.nvim',
-        requires = {{'nvim-lua/plenary.nvim'}}
+        'kyazdani42/nvim-web-devicons',
+        config = require('plugins.nvim-web-devicons')
     }
     use
     {
-        'lewis6991/gitsigns.nvim',
-        requires = {{'nvim-lua/plenary.nvim'}}
+        'mhinz/vim-startify',                           -- Dashboard
+        config = require('plugins.startify')
     }
-
-    -- Startify no center view
-    use 'mhinz/vim-startify'
     -- use 'glepnir/dashboard-nvim'
-
+    use
+    {
+        'nvim-lualine/lualine.nvim',                    -- Statusline
+        config = require('plugins.lualine')
+    }
     -- Bufferline no animations
     -- Barbar colorscheme bad
     -- Barbar offset bad
     -- Barbar buffer ordering messed up
     use
     {
-        'akinsho/nvim-bufferline.lua',
-        requires = {{'kyazdani42/nvim-web-devicons'}}
+        'akinsho/nvim-bufferline.lua',                  -- Bufferline
+        config = require('plugins.bufferline')
     }
     -- use 'romgrk/barbar.nvim'
-
     use
     {
-        'nvim-lualine/lualine.nvim',
-        requires = {{'kyazdani42/nvim-web-devicons'}}
+        'nvim-treesitter/nvim-treesitter',              -- Treesitter
+        config = require('plugins.nvim-treesitter')
     }
-    -- use 'vim-airline/vim-airline'
-
-    -- NerdTree no indentation lines
-    -- NerdTree not able to add buffer space in bufferline
-    use 'kyazdani42/nvim-tree.lua'
-    -- use
-    -- {
-    --     'preservim/nerdtree',
-    --     requires =
-    --     {
-    --         {'Xuyuanp/nerdtree-git-plugin'},
-    --         {'ryanoasis/vim-devicons'}
-    --     }
-    -- }
+    -- use 'neovim/nvim-lspconfig'                      -- LSP
+    use
+    {
+        'lukas-reineke/indent-blankline.nvim',          -- Indent lines
+        config = require('plugins.indent-blankline')
+    }
+    use
+    {
+        'kyazdani42/nvim-tree.lua',                     -- Filetree explorer
+        config = require('plugins.nvim-tree')
+    }
+    use
+    {
+        'nvim-telescope/telescope.nvim',                -- Fuzzy searcher
+        requires = {{'nvim-lua/plenary.nvim'}},
+        config = require('plugins.telescope')
+    }
+    use 'airblade/vim-current-search-match'             -- Highlight current search term
+    use 'google/vim-searchindex'                        -- Search with count 99+
+    use
+    {
+        "akinsho/nvim-toggleterm.lua",                  -- Terminal
+        config = require('plugins.toggleterm')
+    }
+    use
+    {
+        'mbbill/undotree',                              -- Undo history
+        config = require('plugins.undotree')
+    }
+    use
+    {
+        'L3MON4D3/LuaSnip',                             -- Snippet manager
+        config = require('plugins.luasnip')
+    }
+    use
+    {
+        'b3nj5m1n/kommentary',                          -- Comments handler
+        config = require('plugins.kommentary')
+    }
+    use
+    {
+        'tpope/vim-fugitive',                           -- Git tools
+        config = require('plugins.vim-fugitive')
+    }
+    use
+    {
+        'lewis6991/gitsigns.nvim',                      -- Git line changes
+        requires = {{'nvim-lua/plenary.nvim'}},
+        config = require('plugins.gitsigns')
+    }
 end)
